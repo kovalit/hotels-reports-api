@@ -60,7 +60,7 @@ router.get("/booking-analytics", async (req, res) => {
     const pipeline = [
       {
         $match: {
-          date: {
+          datetime: {
             $gte: start,
             $lte: end,
           },
@@ -70,7 +70,7 @@ router.get("/booking-analytics", async (req, res) => {
       {
         $group: {
           _id: {
-            $dateToString: { format: "%Y-%m-%d", date: "$date" },
+            $dateToString: { format: "%Y-%m-%d", date: "$datetime" },
           },
           count: { $sum: 1 },
         },
@@ -169,7 +169,7 @@ router.get("/booking-funnel-summary", async (req, res) => {
     const pipeline = [
       {
         $match: {
-          date: {
+          datetime: {
             $gte: start,
             $lte: end,
           },
@@ -276,7 +276,7 @@ router.get("/services-summary", async (req, res) => {
     const pipeline = [
       {
         $match: {
-          date: {
+          datetime: {
             $gte: start,
             $lte: end,
           },
