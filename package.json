@@ -1,0 +1,49 @@
+{
+  "name": "mongodb-booking-api",
+  "version": "1.0.0",
+  "description": "Express API for MongoDB booking funnel analytics",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "docker:build": "docker build -t booking-api .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env booking-api",
+    "docker:compose": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "api",
+    "booking",
+    "analytics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "next": "16.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.546.0",
+    "tailwind-merge": "3.3.1",
+    "tailwindcss-animate": "1.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@types/node": "24.9.1",
+    "tailwindcss": "^4.1.9",
+    "typescript": "5.9.3",
+    "postcss": "8.5.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
